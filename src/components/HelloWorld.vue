@@ -1,5 +1,5 @@
 <template>
-  <h1>{{ msg }}</h1>
+  <h1>Counter {{ msg }}</h1>
   <button @click="count++">count is: {{ count }}</button>
 </template>
 

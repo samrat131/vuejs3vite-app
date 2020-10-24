@@ -1,13 +1,25 @@
 {
-    "posts" : 
-    [
-        {
-            "id" : 1,
-            "title" : "hello world"
-        },
-        {
-            "id" : 2,
-            "title" : "hello world 2"
-        }
-    ]
+  "posts": [
+    {
+      "title": "this is modified",
+      "body": "Lorem ipsum dolor sit amet",
+      "img": "https://images.2game.com/screenshot/horizon-zero-dawntm-complete-edition-buy-cdkey-0.jpg",
+      "id": 2,
+      "stock" : 100
+    },
+    {
+      "title": "post title 3",
+      "body": "post content three",
+      "img": "https://images.2game.com/screenshot/horizon-zero-dawntm-complete-edition-buy-cdkey-1.jpg",
+      "id": 3,
+      "stock" : 50
+    },
+    {
+      "title": "post title 3",
+      "body": "post content three",
+      "img": "https://images.2game.com/screenshot/horizon-zero-dawntm-complete-edition-buy-cdkey-3.jpg",
+      "id": 4,
+      "stock" : 80
+    }
+  ]
 }
