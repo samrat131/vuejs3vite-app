@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <h1>Posts</h1>
+  <h1>Posts</h1>
+  <div class="post-list">
     <SinglePost v-for="post in posts" :key="post.id" :post="post" />
   </div>
 
@@ -32,5 +32,7 @@ export default {
 </script>
 
 <style>
-
+  .post-list {
+    display: flex;
+  }
 </style>

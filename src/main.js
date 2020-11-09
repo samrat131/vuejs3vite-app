@@ -4,7 +4,8 @@ import router from './routes'
 import './index.css'
 
 const cart = reactive({
-  qty : 0
+  qty: 0,
+  items: []
 })
 
 createApp(App)

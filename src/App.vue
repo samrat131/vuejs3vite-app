@@ -1,20 +1,23 @@
 <template>
+
+    <cart title="My Cart" />
+
     <router-link to="/">Home</router-link>
     | <router-link to="/todo">Todo</router-link>
     | <router-link to="/posts">Posts</router-link>
+    | <router-link to="/add-post">Add Post</router-link>
 
     <router-view></router-view>
 </template>
 
 <script>
 
+import cart from './components/Cart.vue'
+
 export default {
   name: 'App',
-  data () {
-    return {
-      
-    }
-  }
-
+  components: {
+    cart
+  },
 }
 </script>

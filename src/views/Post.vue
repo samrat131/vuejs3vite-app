@@ -1,7 +1,5 @@
 <template>
-
   <SinglePost v-if="post" :post="post" />
-
 </template>
 
 <script>
@@ -14,11 +12,12 @@ export default {
       post: null
     }
   },
+  props: ['id'],
   components: {
     SinglePost
   },
   created () {
-    axios.get('http://localhost:8000/posts/'+this.$route.params.id)
+    axios.get('http://localhost:8000/posts/'+this.id)
       .then(res => {
         this.post = res.data
       })
