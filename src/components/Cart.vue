@@ -3,14 +3,18 @@
     <h1 @click="show = !show">{{ title }}</h1>
     
     <div v-if="show" class="cart_inner">
-      <h3>Cart: {{ totalItems }}</h3>
+      <h3>Item(s): {{ totalItems }}</h3>
       <span>Total: {{ totalAmount }} TK</span>
 
       <ul>
         <li v-for="item in cart.items" key="item.id">
-          <button @click="removeItem(item.id)">X</button>
+          <button @click="removeItem(item.id)"> x </button>
           {{ item.title }}, {{ item.price }}TK 
-          Qty:{{ item.qty }} = {{ item.price*item.qty }}TK
+          Qty:
+          <button @click="increaseItem(item.id)"> + </button>
+          {{ item.qty }} 
+          <button @click="decreaseItem(item.id)"> - </button>
+          {{ item.price*item.qty }}TK
         </li>
       </ul>
     </div>
@@ -30,11 +34,24 @@ export default {
   },
   methods: {
     removeItem(id) {
-      alert(id)
-      cart.items.splice(cart.items.findIndex(function(i){
-        return i.id === id;
-      }), 1);
+      this.cart.items.splice(this.cartItemIndex(id), 1);
+    },
+    increaseItem (id) {
+      this.cart.items[this.cartItemIndex(id)].qty += 1;
+    },
+    decreaseItem (id) {
+      this.cart.items[this.cartItemIndex(id)].qty -= 1;
+      if(!this.cart.items[this.cartItemIndex(id)].qty) {
+        this.removeItem(id)
+        return
+      }
+    },
+    cartItemIndex (id) {
+      return this.cart.items.findIndex(function(item) {
+        return item.id === id
+      })
     }
+    
   },
   props: ['title'],
   inject: ['cart'],

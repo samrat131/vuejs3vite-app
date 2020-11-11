@@ -58,7 +58,7 @@ export default {
         let index = this.cart.items.indexOf(result)
         this.cart.items[index].qty += 1
       } else {
-        console.table(item)
+        // console.table(item)
         this.cart.items.push(item)
       }
 
