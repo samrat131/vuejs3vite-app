@@ -24,6 +24,7 @@
     <h3>Stock {{ post.stock }}</h3>
 
     <button v-if="post.stock" @click="addToCart">Add to cart</button>
+    <button v-if="qty"> + </button>
 
   </div>
 </template>
@@ -38,7 +39,7 @@ export default {
   },
   data() {
     return {
-      
+      qty: 0
     }
   },
   methods : {
@@ -61,6 +62,8 @@ export default {
         // console.table(item)
         this.cart.items.push(item)
       }
+
+      this.qty++
 
     }
   },

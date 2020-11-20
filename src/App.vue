@@ -1,6 +1,6 @@
 <template>
 
-    <cart title="My Cart" />
+    <cart title="Cart" />
 
     <router-link to="/">Home</router-link>
     | <router-link to="/todo">Todo</router-link>
